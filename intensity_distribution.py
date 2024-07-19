@@ -11,10 +11,10 @@ from tqdm import tqdm
 
 from auxiliary.laserscan import SemLaserScan
 
-splits = ["train",  # Train set
-          "valid",  # Valid set
-          "test",  # Test set
-          "all",  # All sets
+splits = ["train",   # Train set
+          "valid",   # Valid set
+          "test",    # Test set
+          "all",     # All sets
           "labeled"  # Train + valid
           ]
 

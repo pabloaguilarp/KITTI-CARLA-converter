@@ -46,10 +46,12 @@ the distribution parameters (mean, standard deviation and covariance).
 To compute the intensities' parameters, simply run:
 ```bash
 python intensity_distribution.py \
--d /mnt/netapp2/Store_uni/home/uvi/et/pap/datasets/SemanticKitti/dataset \
+-d /path/to/SemanticKITTI/dataset \
 -s labeled \
--c experiments/semantic-kitti/semantic-kitti-real-only.yaml \
--o experiments/intensity_distribution/intensity_distribution.txt
+-c path/to/config/semantic-kitti.yaml \
+-o path/to/output_folder/intensity_distribution.txt
 ```
 
 The parameters of the output file can be directly copied and pasted into the intensities' distribution `.yaml` file. 
+A convenient `intensity_distribution.sh` file is provided for simplicity. Simply replace the paths in file to point to 
+your own data.
