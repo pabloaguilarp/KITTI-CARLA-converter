@@ -36,5 +36,20 @@ assigned to all the points. If `--intensity-value` is not set, a value of 0.5 is
 Alternatively, a statistics distribution of intensities for each class can be used. If `--intensities-file` points to 
 a `.yaml` file that contains the mean and standard deviation for each class, a random normal distribution is computed
 and assigned to each class in the sequence. This method helps mimic the real distribution of intensities in the
-converted sequence. An intensities distribution file is provided for simplicity. This file has been calculated on all 
+converted sequence. An intensities' distribution file is provided for simplicity. This file has been calculated on all 
 the labeled sequences in SemanticKITTI.
+
+In case you want to recalculate the intensities' distribution parameters you can use the `intensity_distribution.py` 
+script. This script computes the intensities' distribution on the provided split and generates a text file that contains 
+the distribution parameters (mean, standard deviation and covariance).
+
+To compute the intensities' parameters, simply run:
+```bash
+python intensity_distribution.py \
+-d /mnt/netapp2/Store_uni/home/uvi/et/pap/datasets/SemanticKitti/dataset \
+-s labeled \
+-c experiments/semantic-kitti/semantic-kitti-real-only.yaml \
+-o experiments/intensity_distribution/intensity_distribution.txt
+```
+
+The parameters of the output file can be directly copied and pasted into the intensities' distribution `.yaml` file. 
